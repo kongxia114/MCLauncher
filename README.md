@@ -11,9 +11,7 @@
 本项目是对早期经典 Minecraft 启动器（MineCraft Launcher）的 UI 与功能复刻。初衷是为了重温当年的技术架构与界面设计，同时也作为一个持续学习、慢慢完善的个人开源项目。
 
 界面预览：
-
-![启动器预览]([docs/737a9c98.png](https://github.com/kongxia114/MCLauncher/blob/master/docs/737a9c98.png))
-
+![图片](https://github.com/) 
 ## ✨ 当前进度 (Features)
 
 - [x] 经典 UI 界面复刻（背景、按钮、下拉框布局）
