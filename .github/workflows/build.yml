@@ -1,0 +1,40 @@
+name: Build and Publish MCL
+
+on:
+  push:
+    branches: [ "main" ] # 推送到 main 分支时触发
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: # 允许手动点击按钮触发
+
+jobs:
+  build-and-publish:
+    runs-on: windows-latest # 必须用 Windows，WinForms 不支持 Linux/macOS
+
+    steps:
+    # 1. 检出代码
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    # 2. 设置 MSBuild 环境（使用 VS 自带的构建工具）
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    # 3. 还原 NuGet 包依赖（如果有）
+    - name: Restore NuGet packages
+      run: msbuild MCL.sln /t:Restore
+
+    # 4. 编译项目（Release 模式）
+    - name: Build Solution
+      run: msbuild MCL.sln /p:Configuration=Release /p:Platform="Any CPU" /verbosity:minimal
+
+    # 5. 发布产物（生成可执行文件）
+    - name: Publish App
+      run: msbuild MCL.vbproj /t:Publish /p:Configuration=Release /p:PublishDir=./publish
+
+    # 6. 上传生成的文件夹为 Artifact，方便下载
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: MCL-Launcher
+        path: ./publish
