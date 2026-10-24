@@ -12,7 +12,7 @@
 
 界面预览：
 
-![启动器预览](docs/737a9c98.png)
+![启动器预览]([docs/737a9c98.png](https://github.com/kongxia114/MCLauncher/blob/master/docs/737a9c98.png))
 
 ## ✨ 当前进度 (Features)
 
