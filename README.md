@@ -1,3 +1,4 @@
+<img width="720" height="450" alt="01111" src="https://github.com/user-attachments/assets/bdbe534f-bc23-4c4b-9090-5e62ddc9da49" />
 # MCL (MineCraft Launcher) 忘却的旋律启动器 - 经典复刻版
 
 ![Version](https://img.shields.io/badge/version-5.31-blue.svg)
